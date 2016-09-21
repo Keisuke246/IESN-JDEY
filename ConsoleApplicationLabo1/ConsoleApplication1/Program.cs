@@ -12,7 +12,7 @@ namespace ConsoleApplication1
         {
             Pupil etu1 = new Pupil("Lucas", 8);
             Pupil etu2 = new Pupil("Antoine", 5, 3);
-            Pupil etu3 = new Pupil("Marie", 7, 2);
+            Pupil etu3 = new Pupil("Marie", 7, 1);
             Pupil etu4 = new Pupil("Léo", 8, 1);
             Activity act1 = new Activity("Natation", true);
             Activity act2 = new Activity("Physique", false);
@@ -28,6 +28,8 @@ namespace ConsoleApplication1
             etu1.AddActivity(act4);
             etu1.AddEvaluation("Coloriage", 'R');
             etu1.AddEvaluation(evaluation: 'T', title: "Natation");
+
+            etu3.AddActivity(act2);
 
             List<Pupil> lstPupil = new List<Pupil>();
             lstPupil.Add(etu2);
@@ -45,6 +47,33 @@ namespace ConsoleApplication1
                     System.Console.Write(pupils.ToString());
                 }
             }
+
+            List<Pupil> listPupils = new List<Pupil>()
+            {
+                new Pupil("AAAA", 10,4),
+                new Pupil("BBBB", 12,6)
+            };
+            List<Person> listPersons = new List<Person>()
+            {
+                new Person("Killian", 8),
+                new Person("Jérémy", 10)
+            };
+           /* var listFusion = listPupils.Union(listPersons);
+            foreach(var fus in listFusion)
+            {
+                System.Console.Write(fus.Name + "\n");
+            }
+           */
+            List<Pupil> listPupilsDuplicated = new List<Pupil>()
+            {
+                new Pupil("student1",6),
+                new Pupil("student1",6),
+                new Pupil("student3",5),
+                new Pupil("student4",4),
+                new Pupil("student4",4)
+            };
+            IEnumerable<Pupil> listPupilsNoDuplicated = listPupilsDuplicated.Distinct<Pupil>(new PersonComparer());
+            System.Console.Write(listPupilsNoDuplicated.Count() + "\n");
             System.Console.Read();
         }
     }

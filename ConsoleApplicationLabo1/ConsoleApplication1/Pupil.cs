@@ -62,7 +62,7 @@ namespace ConsoleApplication1
             {
                 ch += "a choisi les activités suivantes :\n";
                 foreach (Activity activity in LstActivities)
-                    ch += activity.informationMessage() + "\n";
+                    ch += " -" + activity.informationMessage() + "\n";
             }
             return ch;
         }
