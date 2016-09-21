@@ -9,6 +9,8 @@ namespace ConsoleApplication1
 
     class Parameter
     {
-        
+        public const int nbAct = 10;
+
+        public enum note { Recommencez = 'R', Satisfaisant = 'S', Trèsbien = 'T'};
     }
 }

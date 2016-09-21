@@ -35,7 +35,7 @@ namespace ConsoleApplication1
 
         public override string ToString()
         {
-            return Name + " âgé(e) de " + age + " ans ";
+            return Name + " âgé(e) de " + Age + " ans ";
         }
 
     }

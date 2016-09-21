@@ -34,9 +34,10 @@ namespace ConsoleApplication1
             lstPupil.Add(etu3);
             lstPupil.Add(etu4);
 
-            var pupilGrade1Plus6 = from pupil in lstPupil
+            /*var pupilGrade1Plus6 = from pupil in lstPupil
                                    where pupil.Age > 6 && pupil.Grade == 1
-                                   select pupil;
+                                   select pupil;*/
+            var pupilGrade1Plus6 = lstPupil.Where(pupil => pupil.Age > 6 && pupil.Grade == 1);
             if(pupilGrade1Plus6 != null)
             {
                 foreach(var pupils in pupilGrade1Plus6)
