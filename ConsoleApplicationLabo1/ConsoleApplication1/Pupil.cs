@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class Pupil : Person
+    public class Pupil : Person
     {
         private List<Activity> lstActivities;
         private char[] tabEval;
@@ -71,6 +71,17 @@ namespace ConsoleApplication1
             int i;
             for (i = 0; i < Parameter.nbAct && !lstActivities[i].Title.Equals(title); i++) ;
             tabEval[i] = evaluation;
+        }
+        public delegate string DelegatePrintActivityCompulsory(Activity activity);
+        public string PrintPupilActivityCompulsory(DelegatePrintActivityCompulsory MyPrintActivity)
+        {
+            int numAct = 0;
+            string ch = base.ToString() + " a choisi les activités obligatoires : \n";
+            foreach(Activity activity in LstActivities)
+            {
+                ch += (++numAct) + " " + MyPrintActivity(activity);
+            }
+            return ch;
         }
     }
 }

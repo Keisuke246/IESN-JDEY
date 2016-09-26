@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -74,6 +74,12 @@ namespace ConsoleApplication1
             };
             IEnumerable<Pupil> listPupilsNoDuplicated = listPupilsDuplicated.Distinct<Pupil>(new PersonComparer());
             System.Console.Write(listPupilsNoDuplicated.Count() + "\n");
+
+            System.Console.Write(etu1.PrintPupilActivityCompulsory(
+                    delegate (Activity activity)
+                    {
+                        return activity.Title + "\n";
+                    }));
             System.Console.Read();
         }
     }

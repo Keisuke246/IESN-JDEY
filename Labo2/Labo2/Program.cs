@@ -33,20 +33,20 @@ namespace Labo2
                 consultant2,
                 independant
             };
-            /*foreach(var pro in pros)
-            {
-                System.Console.Write(pro.ToString());
-            }
-            System.Console.Read();*/
-            //var independents = pros.Where(f => f.Job.Equals("Indépendant"));
             var independents = from pro in pros
                                where pro.Job.Equals("Indépendant")
                                select pro;
-            var consultants = pros.Where(f => f.Job.Equals("Consultant") && f.Companies.Equals(company2));
-            foreach (var consultant in consultants)
-                System.Console.Write(consultant.Companies.ToString());
+            var consultants = pros.Where(f => f.Job.Equals("Consultant") && f.Companies.Any(e => e.Equals(company2)));
             //System.Console.Write(independents.Count());
+            Car car1 = new Car("1-JKF-772");
+            ContactCar contactCar = new ContactCar(contact1, car1);
+            contactCar.DynamicPrint(contact1);
+
+            Car car2 = new Car("1-FDJ-874");
+            ContactCar contactCar2 = new ContactCar(independant, car2);
+            contactCar2.DynamicPrint(independant);
             System.Console.Read();
+
         }
     }
 }

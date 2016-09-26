@@ -69,5 +69,9 @@ namespace Labo2
         {
             return base.ToString() + " (" + PhoneNumber + ")";
         }
+        public String Print()
+        {
+            return base.ToString() + " est un contact privé";
+        }
     }
 }

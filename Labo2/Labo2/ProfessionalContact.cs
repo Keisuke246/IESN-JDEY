@@ -86,5 +86,9 @@ namespace Labo2
         {
             companies.Add(company);
         }
+        public String Print()
+        {
+            return base.ToString() + " est un contact professionel";
+        }
     }
 }
