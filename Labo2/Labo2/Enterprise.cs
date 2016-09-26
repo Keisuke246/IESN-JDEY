@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Labo2
 {
-    public abstract class Person
+    class Enterprise
     {
         private String name;
-        private String lastName;
+        private String headQuartersLocation;
 
         public string Name
         {
@@ -24,27 +24,28 @@ namespace Labo2
             }
         }
 
-        public string LastName
+        public string HeadQuartersLocation
         {
             get
             {
-                return lastName;
+                return headQuartersLocation;
             }
 
             set
             {
-                lastName = value;
+                headQuartersLocation = value;
             }
         }
-        public Person(String name, String lastName)
+
+        public Enterprise(String name,String headQuartersLocation)
         {
             Name = name;
-            LastName = lastName;
+            HeadQuartersLocation = headQuartersLocation;
         }
         public String ToString()
         {
-            return Name + " " + LastName;
+            return Name + " located at " + HeadQuartersLocation;
         }
-        public abstract bool HasHisBirthday();
     }
 }
+
