@@ -9,22 +9,11 @@ namespace ConsoleApplication1
     class Pupil : Person
     {
         private List<Activity> lstActivities;
-        private char[] tabEval;
+        private char[] pupilEvaluations;
 
         public int Grade { get; set; }
 
-        public char[] TabEval
-        {
-            get
-            {
-                return tabEval;
-            }
 
-            set
-            {
-                tabEval = value;
-            }
-        }
 
         public List<Activity> LstActivities
         {
@@ -38,11 +27,25 @@ namespace ConsoleApplication1
                 lstActivities = value;
             }
         }
+
+        public char[] PupilEvaluations
+        {
+            get
+            {
+                return pupilEvaluations;
+            }
+
+            set
+            {
+                pupilEvaluations = value;
+            }
+        }
+
         public Pupil(String name, int age, int grade) : base(name, age)
         {
             Grade = grade;
             LstActivities = new List<Activity>();
-            TabEval = new char[Parameter.nbAct];
+            pupilEvaluations = new char[Parameter.nbAct];
         }
         public Pupil(String name, int age) : this(name, age, 1) { }
         
@@ -52,25 +55,38 @@ namespace ConsoleApplication1
         }
         public override string ToString()
         {
+
+            String chai = Header();
+            chai += PrintActivities(chai);
+            return chai;
+        }
+
+        private string Header()
+        {
             string ch = base.ToString();
             int cptActivities = LstActivities.Count();
-            if(cptActivities == 0)
+            if (cptActivities == 0)
             {
                 ch += "n'a pas encore choisi d'activité\n";
             }
             else
             {
                 ch += "a choisi les activités suivantes :\n";
-                foreach (Activity activity in LstActivities)
-                    ch += " -" + activity.informationMessage() + "\n";
             }
             return ch;
         }
+        private string PrintActivities(String ch)
+        {
+            foreach (Activity activity in LstActivities)
+                ch += " -" + activity.informationMessage() + "\n";
+            return ch;
+        }
+
         public void AddEvaluation(String title = null, char evaluation = (char)Parameter.note.Satisfaisant)
         {
             int i;
             for (i = 0; i < Parameter.nbAct && !lstActivities[i].Title.Equals(title); i++) ;
-            tabEval[i] = evaluation;
+            pupilEvaluations[i] = evaluation;
         }
     }
 }
