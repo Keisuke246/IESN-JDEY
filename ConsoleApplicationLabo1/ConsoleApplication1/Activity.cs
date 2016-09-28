@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class Activity
+    public class Activity
     {
         private String title;
         private Boolean compulsory;

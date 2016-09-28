@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ConsoleApplication1
 {
 
-    class Parameter
+    public class Parameter
     {
         public const int nbAct = 10;
 

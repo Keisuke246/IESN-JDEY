@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class PersonComparer : IEqualityComparer<Person>
+    public class PersonComparer : IEqualityComparer<Person>
     {
         public bool Equals(Person x, Person y)
         {
