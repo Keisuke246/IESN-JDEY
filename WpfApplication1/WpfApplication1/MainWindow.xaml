@@ -24,4 +24,7 @@
         </StackPanel>
 
     </Grid>
+    <Window.Resources>
+        <ResourceDictionary Source="DictionaryContact.xaml"/>
+    </Window.Resources>
 </Window>
