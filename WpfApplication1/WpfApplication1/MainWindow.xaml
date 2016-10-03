@@ -7,17 +7,26 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <ListView ItemsSource="{Binding}" Name="Contacts" Margin="10,93,263,26">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ListView ItemsSource="{Binding}" Name="Contacts" Grid.Row="2" Grid.Column="0">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding LastName}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <TextBlock x:Name="allContacts" HorizontalAlignment="Left" Margin="73,67,0,0" TextWrapping="Wrap" Text="All the contacts" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <TextBlock x:Name="contactDetails" HorizontalAlignment="Left" Margin="355,67,0,0" TextWrapping="Wrap" Text="Details" VerticalAlignment="Top" Foreground="#FF080808" FontSize="20" FontWeight="Bold"/>
-        <TextBlock x:Name="contactList" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Contact list" VerticalAlignment="Top" FontSize="45" Foreground="Blue" FontWeight="Bold"/>
-        <StackPanel HorizontalAlignment="Left" Height="199" Margin="271,94,0,0" VerticalAlignment="Top" Width="223" DataContext="{Binding ElementName=Contacts, Path=SelectedItem}">
+        <TextBlock x:Name="allContacts"  Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Text="All the contacts" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBlock x:Name="contactDetails"  Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="Details" VerticalAlignment="Top" Foreground="#FF080808" FontSize="20" FontWeight="Bold"/>
+        <TextBlock x:Name="contactList" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="Contact list" VerticalAlignment="Top" FontSize="45" Foreground="Blue" FontWeight="Bold"/>
+        <StackPanel HorizontalAlignment="Left" Height="199" Grid.Row="2" Grid.Column="2" VerticalAlignment="Top" Width="223" DataContext="{Binding ElementName=Contacts, Path=SelectedItem}">
             <TextBlock Text="{Binding FirstName}"/>
             <TextBlock Text="{Binding LastName}"/>
             <TextBlock Text="{Binding Email}"/>
