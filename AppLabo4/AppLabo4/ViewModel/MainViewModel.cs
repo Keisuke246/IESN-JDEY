@@ -1,5 +1,6 @@
 ﻿using AppLabo4.Model;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
 using System;
@@ -9,6 +10,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace AppLabo4.ViewModel
 {
@@ -48,6 +50,26 @@ namespace AppLabo4.ViewModel
         {
             _navigationService = navigationService;
             Students = new ObservableCollection<Student>(AllStudents.GetAllStudents());
+        }
+
+        private ICommand _editStudentCommand;
+
+        public ICommand EditStudentCommand
+        {
+            get {
+                if (_editStudentCommand == null)
+                    _editStudentCommand = new RelayCommand(() => EditStudent());
+                    return _editStudentCommand; }
+        }
+        private void EditStudent()
+        {
+            if (CanExecute())
+                _navigationService.NavigateTo("SecondPage", SelectedStudent);
+               
+        }
+        private bool CanExecute()
+        {
+            return (SelectedStudent != null);
         }
 
     }
