@@ -10,11 +10,16 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="1" Width="355" HorizontalAlignment="Left" ItemsSource="{Binding Students.Name, Mode=TwoWay}" SelectedItem="{Binding SelectedStudent, Mode=TwoWay}" Margin="0,35.167,0,-35">
-            
+        <TextBlock Text="Student's list"/>
+        <ListView Grid.Row="1" ItemsSource="{Binding Students, Mode=TwoWay}" Width="355" SelectedItem="{Binding SelectedStudent, Mode=TwoWay}" Margin="0,35.167,0,-35">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
         <Grid x:Name="CommandBarCource" Grid.Row="2">
             <Grid.ColumnDefinitions>
