@@ -10,6 +10,12 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <ListView ItemsSource="{Binding Forecast}" ItemTemplate="{StaticResource WeatherTemplate1}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <AutoSuggestBox Grid.Row="1" PlaceholderText="Nom de la ville" QueryIcon="Find" ToolTipService.ToolTip="Entrez un nom de ville" ></AutoSuggestBox>
+        <ListView Grid.Row="2" ItemsSource="{Binding Forecast}" ItemTemplate="{StaticResource WeatherTemplate1}"/>
     </Grid>
 </Page>
