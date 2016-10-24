@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SmartCity.Model;
+using SmartCity.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +27,7 @@ namespace SmartCity
         public MainPage()
         {
             this.InitializeComponent();
+            DataContext = new MainViewModel();
         }
     }
 }
