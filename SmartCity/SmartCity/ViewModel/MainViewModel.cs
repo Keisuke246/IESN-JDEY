@@ -23,13 +23,13 @@ namespace SmartCity.ViewModel
         }
 
 
-        public Enigme Enigmes
+        public Enigme Enigme
         {
             get { return _enigme; }
             set
             {
                 _enigme = value;
-                RaisePropertyChanged("Enigmes");
+                RaisePropertyChanged("Enigme");
             }
         }
     }

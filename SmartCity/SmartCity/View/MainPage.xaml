@@ -8,9 +8,12 @@
     mc:Ignorable="d"
     DataContext="{Binding Source={StaticResource Locator}, Path=Main}">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
@@ -22,7 +25,12 @@
             <Button Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="36" Grid.Column="0"/>
             <TextBlock Name="ScreenName" Text="Ajout d'une énigme" Grid.Column="1" TextAlignment="Center"/>
             <TextBlock Name="RiddleTitle" Text="Énigme" Grid.Column="1" Grid.Row="1"/>
-            <TextBlock Name="RiddleContent" Grid.Column="1" Grid.Row="2" DataContext="{Binding Enigmes}"/>
+            <TextBox Name="RiddleContent" Grid.Row="2" Grid.Column="1" Text="{Binding Questions,Mode=OneWay}"
+                       TextWrapping="Wrap" Width="300" HorizontalAlignment="Left"/>
+            <TextBlock Name="SolutionTitle" Text="Solution" Grid.Row="3" Grid.Column="1"/>
+            <TextBox Name="SolutionContent" Text=""
+                       Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Width="300" TextWrapping="Wrap"/>
+            <Button Name="AddButton" Content="Ajouter" Grid.Row="6" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
         </Grid>
     </Grid>
 </Page>
