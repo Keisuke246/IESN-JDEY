@@ -29,7 +29,6 @@ namespace SmartCity
         public MainPage()
         {
             this.InitializeComponent();
-            this.DataContext = this;
         }
     }
 }
