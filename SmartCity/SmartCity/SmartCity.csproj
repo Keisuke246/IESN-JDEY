@@ -96,6 +96,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\AllEnigme.cs" />
+    <Compile Include="ViewModel\AddPathViewModel.cs" />
+    <Compile Include="ViewModel\AddStepViewModel.cs" />
     <Compile Include="View\AddPathPage.xaml.cs">
       <DependentUpon>AddPathPage.xaml</DependentUpon>
     </Compile>

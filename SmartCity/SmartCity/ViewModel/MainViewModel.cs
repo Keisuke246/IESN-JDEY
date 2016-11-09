@@ -1,4 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Views;
 using SmartCity.Model;
 using System;
 using System.Collections.Generic;
@@ -23,9 +25,12 @@ namespace SmartCity.ViewModel
                 RaisePropertyChanged("Enigmes");
             }
         }
-        public MainViewModel()
+        private INavigationService _navigationService;
+        [PreferredConstructor]
+        public MainViewModel(INavigationService navigationService)
         {
             Enigmes = new ObservableCollection<Enigme>(AllEnigme.GetAllEnigmes());
+            _navigationService = navigationService;
         }
     }
 }

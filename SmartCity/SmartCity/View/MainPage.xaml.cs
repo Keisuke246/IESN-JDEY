@@ -30,5 +30,9 @@ namespace SmartCity
         {
             this.InitializeComponent();
         }
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            Menu.IsPaneOpen = !Menu.IsPaneOpen;
+        }
     }
 }
