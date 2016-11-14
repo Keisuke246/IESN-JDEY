@@ -16,12 +16,16 @@ namespace SmartCity.ViewModel
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<AddStepViewModel>();
+            SimpleIoc.Default.Register<AddPathViewModel>();
+            SimpleIoc.Default.Register<HamburgerMenuViewModel>();
 
             NavigationService navigationPages = new NavigationService();
             SimpleIoc.Default.Register<INavigationService>(() => navigationPages);
             navigationPages.Configure("MainPage", typeof(MainPage));
             navigationPages.Configure("AddStepPage", typeof(AddStepPage));
             navigationPages.Configure("AddPathPage", typeof(AddPathPage));
+            navigationPages.Configure("HamburgerMenu", typeof(HamburgerMenu));
         }
         public MainViewModel Main
         {
@@ -42,6 +46,13 @@ namespace SmartCity.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<AddStepViewModel>();
+            }
+        }
+        public HamburgerMenuViewModel HamMenu
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<HamburgerMenuViewModel>();
             }
         }
     }

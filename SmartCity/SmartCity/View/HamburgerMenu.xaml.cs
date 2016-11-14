@@ -13,18 +13,20 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+// The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
 namespace SmartCity.View
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class AddStepPage : Page
+    public sealed partial class HamburgerMenu : UserControl
     {
-        public AddStepPage()
+        public HamburgerMenu()
         {
             this.InitializeComponent();
         }
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            Menu.IsPaneOpen = !Menu.IsPaneOpen;
+        }
+
     }
 }
