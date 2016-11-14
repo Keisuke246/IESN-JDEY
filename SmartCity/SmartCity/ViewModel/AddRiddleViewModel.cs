@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Controls;
 
 namespace SmartCity.ViewModel
 {
-    public class MainViewModel : ViewModelBase, INotifyPropertyChanged
+    public class AddRiddleViewModel : ViewModelBase, INotifyPropertyChanged
     {
         private ObservableCollection<Enigme> _enigmes;
 
@@ -28,7 +28,7 @@ namespace SmartCity.ViewModel
         }
         private INavigationService _navigationService;
         [PreferredConstructor]
-        public MainViewModel(INavigationService navigationService)
+        public AddRiddleViewModel(INavigationService navigationService)
         {
             Enigmes = new ObservableCollection<Enigme>(AllEnigme.GetAllEnigmes());
             _navigationService = navigationService;
