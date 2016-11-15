@@ -1,11 +1,14 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
+using SmartCity.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
 namespace SmartCity.ViewModel
@@ -27,12 +30,23 @@ namespace SmartCity.ViewModel
                 RaisePropertyChanged("SelectedSource");
 
                 if (_selectedSource.Name.Equals("AddRiddleItem"))
-                    _navigationService.NavigateTo("MainPage");
+                    _mainFrame.Navigate(typeof(AddRiddlePage));
                 else if (_selectedSource.Name.Equals("AddPathItem"))
-                    _navigationService.NavigateTo("AddPathPage");
+                    _mainFrame.Navigate(typeof(AddPathPage));
                 else if (_selectedSource.Name.Equals("AddStepItem"))
-                    _navigationService.NavigateTo("AddStepPage");
+                    _mainFrame.Navigate(typeof(AddStepPage));
             }
         }
+        private Frame _mainFrame;
+
+        public Frame MainFrame
+        {
+            get { return _mainFrame; }
+            set {
+                _mainFrame = value;
+                RaisePropertyChanged("MainFrame");
+            }
+        }
+
     }
 }

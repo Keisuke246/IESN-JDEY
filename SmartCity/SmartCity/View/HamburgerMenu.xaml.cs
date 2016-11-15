@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartCity.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -27,6 +28,13 @@ namespace SmartCity.View
         {
             Menu.IsPaneOpen = !Menu.IsPaneOpen;
         }
-
+        internal bool DoesShowSomething()
+        {
+            return MainFrame.Content != null;
+        }
+        internal void ShowDefaultPage()
+        {
+            MainFrame.Navigate(typeof(AddPathPage));
+        }
     }
 }

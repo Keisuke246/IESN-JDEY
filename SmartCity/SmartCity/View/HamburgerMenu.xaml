@@ -15,7 +15,10 @@
                        IsPaneOpen="False" 
                        CompactPaneLength="60" 
                        OpenPaneLength="250" >
-                <SplitView.Pane>
+            <SplitView.Content>
+                <Frame x:Name="MainFrame" Content="{Binding MainFrame,Mode=TwoWay}"></Frame>
+            </SplitView.Content>
+            <SplitView.Pane>
                 <ListBox SelectedItem="{Binding SelectedSource, Mode=TwoWay}"
                                      SelectionMode="Single">
                     <ListBoxItem>

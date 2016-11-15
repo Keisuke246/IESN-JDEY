@@ -23,7 +23,6 @@
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <local:HamburgerMenu Grid.Column="0"></local:HamburgerMenu>
             <TextBlock Name="ScreenName" Text="Ajout d'une étape" Grid.Column="1" TextAlignment="Center"/>
             <TextBlock Name="StepTitle" Text="Nom de l'étape" Grid.Column="1" Grid.Row="1"/>
             <TextBox Name="StepContent" Grid.Row="2" Grid.Column="1" Text="Le grognon"

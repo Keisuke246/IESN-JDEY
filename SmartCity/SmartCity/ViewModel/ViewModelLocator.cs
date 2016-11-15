@@ -22,7 +22,7 @@ namespace SmartCity.ViewModel
 
             NavigationService navigationPages = new NavigationService();
             SimpleIoc.Default.Register<INavigationService>(() => navigationPages);
-            navigationPages.Configure("MainPage", typeof(MainPage));
+            navigationPages.Configure("AddRiddlePage", typeof(AddRiddlePage));
             navigationPages.Configure("AddStepPage", typeof(AddStepPage));
             navigationPages.Configure("AddPathPage", typeof(AddPathPage));
             navigationPages.Configure("HamburgerMenu", typeof(HamburgerMenu));
