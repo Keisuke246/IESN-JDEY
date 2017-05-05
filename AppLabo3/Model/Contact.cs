@@ -12,6 +12,8 @@ namespace Model
         public String LastName { get; set; }
         public String Email { get; set; }
 
+        public int Age { get; set; }
+
         public Contact(String firstName, String lastName, String email)
         {
             FirstName = firstName;
